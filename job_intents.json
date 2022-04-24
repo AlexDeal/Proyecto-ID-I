@@ -1,0 +1,40 @@
+{
+  "intents": [
+    {"tag": "greeting",
+     "patterns": ["Hola", "Saludos", "Hay alguien ahi?","Hello","Olla", "Que onda", "Buenas tardes", "Buenos dias", "Que tranza", "Hi"],
+     "responses": ["Hola, bienvenido ¿Como puedo ayudarte?", "Hola, soy Abbott, ¿Como puedo ayudarte?", "Hola ¿Como te encuentras?", "Hola otra vez, ¿Como puedo ayudarte?"]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Adios", "Nos vemos despues", "Goodbye", "Ok adios", "Hasta luego", "Hasta pronto"],
+     "responses": ["Te veo despues!", "Ten un buen dia", "Estoy para servirte", "Nos vemos pronto", "Sayoonara", "Que todo salga bien", "Claro, hasta luego", "Ciao"]
+    },
+    {"tag": "thanks",
+     "patterns": ["Gracias", "Muchas gracias", "Te agradezco por la ayuda", "Asombroso, gracias", "Gracias por ayudarme"],
+     "responses": ["Feliz de ayudar!", "Estoy para ti!", "Un placer ayudarte", "De nada :D", "No hay de que"]
+    },
+    {"tag": "noanswer",
+     "patterns": ["", "asdadasdafkljhsfjṕaspfhf"],
+     "responses": ["Perdon, no pude entenderte", "Por favor proporciona mas información", "No estoy seguro si entendí", "Sigo aquí"]
+     },
+     {"tag": "name",
+      "patterns": ["¿Cual es tu nombre?", "¿Como te llamas?", "Dime tu nombre", "Quien eres", "Hablame de ti", "Dime mas de ti", "y tu eres?"],
+      "responses": ["Soy Abbott", "Mi nombre es Abbott", "Puedes llamarme Abbott", "Soy Abbott pero puede llamarme amigo", "Abbott es mi nombre"]
+      },
+      {"tag": "options",
+       "patterns": ["¿Que puedes hacer?", "¿Como puedes ayudarme?", "¿Que es lo que sabes?", "¿Cual es tu proposito?", "¿Como me puedes ayudar?"],
+       "responses": ["Puedo escucharte cuando lo necesites", "Te puedo dar consejos que te podrán hacer sentir mejor", "Puedo ayudar a las personas a sentirse un poco mejor", "Puedo darte un poco de informacion acerca de la depresion"]
+      },
+     {"tag": "consejos",
+      "patterns": ["No me estoy sintiendo bien el dia de hoy", "Me siento triste", "No tengo ganas de hacer nada", "No tengo muchos animos", "Me siento inseguro de mi", "Estoy triste", "Siento que mi vida no vale nada"],
+      "responses": ["Gracias por compartir esto conmigo. La tristesa puede hacer que las tareas mas pequeñas parezcan inalcanzables pero quiero que sepas que estoy aqui contigo para ayudarte y que podamos atravesar esto juntos. Cuando alguien se siente deprimido o ansioso, muy amenudo pierden la motivacion para hacer actividades, incluso aquellas que usualmente disfrutaban. No estas solo."]
+      },
+      {"tag": "ideas",
+       "patterns": ["¿Que puedo hacer?", "¿Como puedo evitarlo?", "¿Como puedo mejorar mi estado de animo?", "¿Que me recomiendas hacer?", "¿Puedes darme algun consejo?"],
+       "responses": ["Lo mejor que puedes hacer es iniciar algún tipo de actividad que te cause alegria, incluso si no tienes motivación para comenzar. Se que suena dificil y puede ser dificil empezar a realizar actividades sin tener motivacion para ello pero hey, hay buenas noticias, los datos muestran que hacer actividades ayudan a mejorar el estado de animo a traves del tiempo."]
+      },
+      {"tag": "ideasfinales",
+        "patterns": ["Ok, lo hare", "Lo intentare", "Me parece bien", "OK", "Lo pondré a prueba", "Seguire tus consejos", "Creere en ti", "Confiare en ti"],
+        "responses": ["Adivina que mas, evadir realizar actividades cuando te sientes triste o ansioso puede de hecho incrementar los sentiminetos negativos a traves del tiempo, asi que necesitamos romper ese ciclo. Siempre recuerda que la depresion es un condicion medica y esta bien hablar sobre ello. Si te sientes muy abrumado por favor contacta a tu psicologo mas cercano. Aqui te dejo algunas actividades y un par de playlists que podrian ayudarte. https://www.youtube.com/watch?v=dQw4w9WgXcQ"]
+       }
+  ]
+}

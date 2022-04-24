@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" charset="UTF-8">
+
+<head>
+    <title>Azalea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body>
+<section id="SectionSuperior">
+    <article id="ArticleBotonesSuperiores">
+        <button class="BotonesSuperiores" id="BtnInicio">Inicio</button>
+        <button class="BotonesSuperiores" id="BtnQuienesSomos"> Nosotros</button>
+        <button class="BotonesSuperiores" id="BtnAcceder">Acceder</button>
+    </article>
+</section>
+
+<section id="SectionQuienesSomos">
+    <div class="container">
+        <div class="chatbox">
+            <div class="body" id="chatbody">
+                <div class="scroller"></div>
+            </div>
+            <form class="chat" method="post" autocomplete="off">
+                    <input type="text" name="chat" id="question" placeholder="Preguntale algo"
+                           style=" font-family: cursive; font-size: 20px;">
+                    <input type="submit" value="Enviar" class="btn btn-primary" id="submit-button">
+                
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="/static/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
