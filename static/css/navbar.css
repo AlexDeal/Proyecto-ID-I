@@ -1,0 +1,106 @@
+/*---------------------------- NAV BAR -----------------------------*/
+
+.menu-expanded
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+    flex-direction: row;
+    background-color: white;
+    height: 15vh;
+}
+
+#header
+{
+    height: 100%;
+    width: 30%;
+}
+
+#nav
+{
+    background-image: url('../img/logo/logo_gris.svg');
+    background-position: 0%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+#nav:hover
+{
+    background-image: url('../img/logo/logo_negro.svg');
+}
+
+#menu-items
+{
+    width: 70%;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    margin: auto;
+}
+
+#menu-items .item
+{
+    padding: 2%;
+    background-color: white;
+    border-color: gray;
+    border-width: 2px;
+    border-radius: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+}
+
+#menu-items .item:hover
+{
+    border-color: black;
+}
+
+
+#menu-items .item a
+{
+    font-family: 'Roboto';
+    font-weight: bolder;
+    font-size: 2vh;
+    color: gray;
+    font-style: normal;
+    text-decoration:none;
+}
+
+#menu-items .item a:hover
+{
+    color: black;
+}
+
+.title
+{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+}
+
+.title p
+{
+    margin: 0;
+    margin-top: 6%;
+}
+
+/*LOGOS DE FONTAWESOME*/
+
+.fa-right-to-bracket
+{
+    font-size: 2vw;
+}
+
+.fa-user-plus
+{
+    font-size: 2vw;
+}

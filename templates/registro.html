@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo/logo_mini.svg" type="image/x-icon">
+    <title>Azalea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="CSSFONT/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body class="body-expanded">
+    <div id="sidemenu" class="menu-expanded">
+        <!-- Cabecera -->
+        <div id="header">
+            <a  OnClick="location.href='/'">
+                <div id="nav">
+                </div>
+            </a>
+        </div>
+        <!-- ITEMS -->
+        <div id="menu-items">
+            <div class="item">
+                <a href='/login'>
+                    <div class="title">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <p>Iniciar Sesión</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href='/registro'>
+                    <div class="title">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <p>Registrarse</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="main-container">
+        <div class="formulario">
+            <div class="form-container sign-in-container">
+                <form  method='post' id="form">
+                    <div class="form">
+                        <h1 style="color: #14539a; ">Registro</h1>
+                        <div class="grupo">
+                            <input type="text" name="nombre" id="nombre" required><span class="barra"></span>
+                            <label for="">Nombre:</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="AP" id="paterno" required><span class="barra"></span>
+                            <label for="">Apellido Paterno:</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="AM" id="materno" required><span class="barra"></span>
+                            <label for="">Apellido Materno:</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="direccion" id="correo" required><span class="barra"></span>
+                            <label for="">Correo electrónico:</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="text" name="user" id="usuario" required><span class="barra"></span>
+                            <label for="">Usuario:</label>
+                        </div>
+                        <div class="grupo">
+                            <input type="password" name="password" id="password" required><span class="barra"></span>
+                            <label for="">Contraseña:</label>
+                        </div>
+
+                        <button type="submit" name="submit">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <img class="img" src="{{ url_for('static', filename='img/bienestar2.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="firebase.js" type="module"></script>
+    <script src="JS/registro.js" type="module"></script>
+</body>
+
+</html>

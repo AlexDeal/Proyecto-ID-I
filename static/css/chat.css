@@ -37,7 +37,8 @@ body {
 }
 
 .chat{
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
 
 .avail {

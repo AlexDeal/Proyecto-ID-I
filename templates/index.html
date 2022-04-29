@@ -1,45 +1,94 @@
 <!DOCTYPE html>
-<html lang="es" charset="UTF-8">
+<html lang="es">
 
 <head>
+
+    <meta charset="UTF-8">
     <title>Azalea</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSSFont/all.min.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+   
+
 </head>
 
+<!--#0000004f;---------------------------------------------------------->
+
 <body>
-<section id="SectionSuperior">
-    <article id="ArticleBotonesSuperiores">
-        <button class="BotonesSuperiores" id="BtnInicio">Inicio</button>
-        <button class="BotonesSuperiores" id="BtnQuienesSomos"> Nosotros</button>
-        <button class="BotonesSuperiores" id="BtnAcceder">Acceder</button>
-    </article>
-</section>
-
-<section id="SectionQuienesSomos">
-    <div class="container">
-        <div class="chatbox">
-            <div class="body" id="chatbody">
-                <div class="scroller"></div>
+    <section id="SectionSuperior">
+        <article id="ArticleLogoSuperior">
+            <img id="IMGLogoSuperior" src="{{ url_for('static', filename='img/logo/logo.svg') }}">
+        </article>
+        <article id="ArticleBotonesSuperiores">
+            <button class="BotonesSuperiores" id="BtnInicio">Inicio</button>
+            <button class="BotonesSuperiores" id="BtnQuienesSomos">¿Quiénes somos?</button>
+            <button class="BotonesSuperiores" id="BtnAcceder" OnClick="location.href='/login'">Acceder</button>
+        </article>
+    </section>
+    <section id="SectionBanner">
+        <article id="ArticleTextoBanner">
+            <h1>Azalea</h1>
+            <p>Un sitio para cambiar tu vida.</p>
+        </article>
+    </section>
+    <section class="SectionInicio">
+        <article id="ArticleContenedorImagenQuienesSomos">
+            <img id="IMGQuienesSomos" src="{{ url_for('static', filename='img/logo/logo_negro.svg') }}">
+        </article>
+        <article class="ArticleTextoInicio">
+            <h1>¿Qué es Azalea?</h1>
+            <p>Es un proyecto enfocado en dar apoyo psicológico a través de un asistente virtual. El usuario podrá
+                interactuar con este asistente mientras recibe un apoyo psicológico enfocado con una depresión y
+                ansiedad derivados por la pandemia de COVID-19.</p>
+        </article>
+    </section>
+    <section class="SectionInicio">
+        <article class="ArticleTextoInicio">
+            <h1>Meta</h1>
+            <p>Ser un apoyo en el tratamiento psicológico de nuestros usuarios, ayudarlos a superar cuestiones que
+                ocasionan ansiedad y depresión relacionada con la pandemia de COVID-19.</p>
+        </article>
+    </section>
+    <section id="SectionInicioPasos">
+        <article id="ArticleInicioTituloPasos">
+            <h1>Pasos</h1>
+        </article>
+        <article id="ArticleContenedorTextoPasos">
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <p>1. Acceder a la sección de registro de nuestra página.</p>
             </div>
-            <form class="chat" method="post" autocomplete="off">
-                    <input type="text" name="chat" id="question" placeholder="Preguntale algo"
-                           style=" font-family: cursive; font-size: 20px;">
-                    <input type="submit" value="Enviar" class="btn btn-primary" id="submit-button">
-                
-            </form>
-        </div>
-    </div>
-</section>
-
-<script src="/static/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-<script src="{{ url_for('static', filename='app.js') }}"></script>
+            <div>
+                <i class="fa-brands fa-wpforms"></i>
+                <p>2. Rellenar el formulario de registro con su información correspondiente.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-robot"></i>
+                <p>3. Finalmente accede a su perfil y al chat con el chatbot.</p>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <section id="SectionPieDePagina">
+            <article class="ArticlePieDePagina_Texto">
+                <h2>Sitio</h2>
+                <a href="/"> Inicio </a>
+                <a href="/login"> Acceder </a>
+            </article>
+            <article class="ArticlePieDePagina_Texto">
+                <h2>Redes Sociales</h2>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook </a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram </a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter </a>
+            </article>
+            <article id="ArticlePieDePagina_Linea"></article>
+            <article id="ArticlePieDePagina_Derechos">
+                <p>Todos los derechos reservados ©Copyright 2022<b> Azalea</b></p>
+            </article>
+        </section>
+    </footer>
 
 </body>
 

@@ -1,0 +1,353 @@
+html,body
+{
+    padding: 0;
+    margin: 0;
+}
+
+/* ----------------------------- INICIO BANNER SUPERIOR ----------------------------- */
+
+#SectionSuperior
+{
+    background-color: #14539a;
+    position: relative;
+    height: 53px;
+    margin: 0;
+    display: table;
+}
+
+#ArticleLogoSuperior
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 53px;
+    display: table;
+    vertical-align: middle;
+}
+
+#IMGLogoSuperior
+{
+    object-fit: contain;
+    height: 53px;
+    width: 90px;
+}
+
+#ArticleBotonesSuperiores
+{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    text-align: right;
+    width: 100%;
+}
+
+.BotonesSuperiores
+{
+    background: transparent;
+    position: relative;
+    line-height: 4;
+    padding: 0 2em;
+    margin: 0;
+    border: 0ch;
+    font-family: 'Roboto';
+    font-weight: bolder;
+    color: white;
+}
+.BotonesSuperiores::before
+{
+    color: transparent;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10%;
+    background: #84c6fc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+}
+
+.BotonesSuperiores:hover
+{
+    color: transparent;
+}
+
+.BotonesSuperiores:hover::before
+{
+    color: black;
+    font-weight: bolder;
+    height: 100%;
+}
+
+/* ----------------------------- FIN BANNER SUPERIOR ----------------------------- */
+
+/* ----------------------------- INICIO BANNER IMÁGENES ----------------------------- */
+
+
+#BtnInicio::before
+{ 
+    content: "Inicio";
+}
+
+#BtnQuienesSomos::before
+{ 
+    content: "¿Quiénes somos?";
+}
+
+#BtnAcceder::before
+{ 
+    content: "Acceder";
+}
+
+#SectionBanner
+{
+    background-color: #000;
+    position: relative;
+    width: 100%;
+    height: calc(50vh - 53px);
+    background-size: cover;
+    background-position: center;
+    transition: all .3 ease-in-out;
+    background-image: url('../img/banner1.png');
+    animation: bannerImagenes 28s infinite linear;
+}
+
+#ArticleTextoBanner
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto';
+    font-size: 200%;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ArticleTextoBanner h1
+{
+    font-size: 350%;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes bannerImagenes
+{
+    0%
+    {
+        opacity: 0;
+        background-image: url('../img/banner1.png');
+    }
+    1%
+    {
+        opacity: 1;
+    }
+    24%
+    {
+        opacity: 1;
+    }
+    25%
+    {
+        background-image: url('../img/banner1.png');
+        opacity: 0;
+    }
+    26%
+    {
+        background-image: url('../img/banner2.jpg');
+        opacity: 0;
+    }
+    27%
+    {
+        opacity: 1;
+    }
+    49%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        background-image: url('../img/banner2.jpg');
+        opacity: 0;
+    }
+    51%
+    {
+        background-image: url('../img/banner3.png');
+        opacity: 0;
+    }
+    52%
+    {
+        opacity: 1;
+    }
+    74%
+    {
+        opacity: 1;
+    }
+    75%
+    {
+        background-image: url('../img/banner3.png');
+        opacity: 0;
+    }
+    76%
+    {
+        background-image: url('../img/banner4.jpg');
+        opacity: 0;
+    }
+    77%
+    {
+        opacity: 1;
+    }
+    99%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        background-image: url('../img/banner4.jpg');
+        opacity: 0;
+    }
+}
+
+/* ----------------------------- FIN BANNER IMÁGENES ----------------------------- */
+
+
+/* ----------------------------- INICIO AREA QUIENES SOMOS ----------------------------- */
+
+.SectionInicio
+{
+    position: relative;
+    display: table;
+    margin-top: 5vh;
+}
+
+#ArticleContenedorImagenQuienesSomos
+{
+    /*background-color: aquamarine;*/
+    position: relative;
+    width: 50vw;
+    height: 40vh;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#ArticleContenedorImagenQuienesSomos img
+{
+    /*background: rgb(255, 246, 127);*/
+    object-fit: contain;
+    position: relative;
+    width: 50vw;
+    height: 40vh;
+
+}
+
+.ArticleTextoInicio
+{
+    
+    /*background-color: aqua;*/
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    font-family: 'Roboto';
+    font-size: 150%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 1em;
+}
+
+#SectionInicioPasos
+{
+    font-family: 'Roboto';
+    font-size: 150%;
+    display: flex;
+
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+}
+
+#ArticleContenedorTextoPasos
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+}
+
+#ArticleContenedorTextoPasos div
+{
+    width: 33%;
+}
+
+#ArticleContenedorTextoPasos i
+{
+    color: black;
+    font-size: 500%;
+}
+
+/* ----------------------------- FIN AREA QUIENES SOMOS ----------------------------- */
+
+/* ----------------------------- INICIO PIE DE PAGINA ----------------------------- */
+
+footer
+{
+    width: 100%;
+    padding: 5px 0px;
+    background-color: #14539a;
+}
+
+#SectionPieDePagina
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 1px;
+}
+
+.ArticlePieDePagina_Texto
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    margin: 2vw;
+}
+
+.ArticlePieDePagina_Texto h2
+{
+    font-family: 'Roboto';
+    font-weight: bolder;
+    font-size: 100%;
+    color: white;
+}
+
+.ArticlePieDePagina_Texto a
+{
+    font-family: 'Roboto';
+    font-size: 100%;
+    color: white;
+    text-decoration:none;
+}
+
+#ArticlePieDePagina_Linea
+{
+    width: 100%;
+    height: 2px;
+    background-color: #84c6fc;
+}
+
+#ArticlePieDePagina_Derechos
+{
+    margin: auto;
+    font-family: 'Roboto';
+    font-size: 70%;
+    color: white;
+    text-align: center;
+}
