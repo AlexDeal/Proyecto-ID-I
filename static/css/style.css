@@ -100,6 +100,11 @@ html,body
     content: "Acceder";
 }
 
+#BtnSalir::before
+{ 
+    content: "Salir";
+}
+
 #SectionBanner
 {
     background-color: #000;

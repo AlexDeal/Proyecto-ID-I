@@ -1,40 +1,22 @@
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 import processor
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import auth
-from firebase_admin import firestore
+import pyrebase
 
-cred = credentials.Certificate('static/prueba-bd942-firebase-adminsdk-xwv7e-50a290b79b.json')
+#Agregamos las credenciales
+config = {
+  "apiKey": "AIzaSyCa-18sM8mj-I_XOI4WlNk6M-BUNhTfsLs",
+  "authDomain": "prueba-bd942.firebaseapp.com",
+  "databaseURL": "https://prueba-bd942-default-rtdb.firebaseio.com/",
+  "storageBucket": "prueba-bd942.appspot.com"
+}
 
-firebase_admin.initialize_app(cred)
+#Inicializamos firebase
 
-db = firestore.client()
-
+firebase = pyrebase.initialize_app(config)
+auth = firebase.auth()
+db = firebase.database()
 person = {"is_logged_in": False, "name": "", "email": "", "uid": ""}
 
-'''
-email='alejandro@gmail.com'
-doc_ref = db.collection('Usuarios').document(email)
-try:
-
-    doc_ref.set({
-        'nombre':'Alejandro',
-        'apellido': 'Serrano',
-        'edad':23
-    })
-except:
-    print('error')
-'''
-
-'''
-email='alejandro@gmail.com'
-password='123456'
-try:
-    user=auth.create_user(email=email, password=password)
-except:
-  print("An exception occurred")
-'''
 
 app = Flask(__name__)
 
@@ -73,8 +55,8 @@ def controladorLogin():
         password = result["password"]
         try:
             #Try signing in the user with the given information
-            user = auth.get_user_by_email(email)
-            #user = auth.sign_in_with_email_and_password(email, password)
+           
+            user = auth.sign_in_with_email_and_password(email, password)
             #Insert the user data in the global person
             global person
             person["is_logged_in"] = True
@@ -93,6 +75,53 @@ def controladorLogin():
         else:
             print('hola')
             #return redirect(url_for('index'))
+
+@app.route("/controladorRegistro", methods = ["POST", "GET"])
+def controladorRegistro():
+    if request.method == "POST":        #Only listen to POST
+        result = request.form           #Get the data submitted
+        nombre = result["nombre"]
+        apellidoP = result["AP"]
+        apellidoM = result["AM"]
+        email = result["direccion"]
+        usuario = result["user"]
+        password = result["password"]
+        
+        try:
+            #Try creating the user account using the provided data
+            auth.create_user_with_email_and_password(email, password)
+            #Login the user
+            user = auth.sign_in_with_email_and_password(email, password)
+            #Add data to global person
+            global person
+            person["is_logged_in"] = True
+            person["email"] = user["email"]
+            person["uid"] = user["localId"]
+            #person["name"] = user["name"]
+            #Append data to the firebase realtime database
+            data = {"nombre": nombre,
+            'apellidoP':apellidoP,
+            'apellidoM':apellidoM, 
+            'email': email,
+            'user':usuario,
+            'contrasenia':password}
+
+            db.child("users").child(person["uid"]).set(data)
+            #Go to welcome page
+            return redirect(url_for('welcome'))
+        except:
+            #If there is any error, redirect to register
+            return redirect(url_for('index'))
+    else:
+        if person["is_logged_in"] == True:
+            return redirect(url_for('welcome'))
+        else:
+            return redirect(url_for('index'))
+
+@app.route('/salir')
+def salir():
+    person["is_logged_in"] = False
+    return redirect(url_for('index'))
 
 @app.route('/chatbot', methods=["GET", "POST"])
 def chatbotResponse():
